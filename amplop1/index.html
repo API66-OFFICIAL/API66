@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Amplop Sakura</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+body{
+background:#000;
+overflow-x:hidden;
+}
+
+.hero{
+
+height:100vh;
+position:relative;
+overflow:hidden;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+padding:25px;
+
+}
+
+.bg{
+
+position:absolute;
+inset:0;
+
+background:
+linear-gradient(
+rgba(0,0,0,.2),
+rgba(0,0,0,.75)
+),
+url('https://cerelana9-blip.github.io/ss/bgm.png')
+center center / cover no-repeat;
+
+transform:scale(1.05);
+
+}
+
+.content{
+
+position:relative;
+z-index:2;
+
+width:100%;
+max-width:420px;
+
+text-align:center;
+
+}
+
+.badge{
+
+display:inline-block;
+
+padding:10px 18px;
+
+border-radius:999px;
+
+background:rgba(255,255,255,.15);
+
+backdrop-filter:blur(10px);
+
+color:#fff;
+font-size:14px;
+font-weight:600;
+
+margin-bottom:20px;
+
+}
+
+.title{
+
+font-size:42px;
+font-weight:900;
+line-height:1.1;
+
+color:#fff;
+
+text-shadow:
+0 0 20px rgba(255,215,0,.4);
+
+}
+
+.gold{
+
+background:
+linear-gradient(
+45deg,
+#ffe27a,
+#ffb300
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+}
+
+.desc{
+
+margin-top:15px;
+
+color:#f3f3f3;
+
+font-size:16px;
+line-height:1.7;
+
+}
+
+.timer{
+
+margin-top:20px;
+
+font-size:34px;
+font-weight:900;
+
+color:#ffd700;
+
+text-shadow:
+0 0 15px gold;
+
+}
+
+.claim{
+
+position:fixed;
+
+bottom:25px;
+left:20px;
+right:20px;
+
+z-index:50;
+
+padding:18px;
+
+border:none;
+border-radius:999px;
+
+font-size:22px;
+font-weight:800;
+
+cursor:pointer;
+
+color:white;
+
+background:
+linear-gradient(
+45deg,
+#ff4f9a,
+#ff7b00
+);
+
+box-shadow:
+0 0 25px #ff4f9a,
+0 0 60px rgba(255,79,154,.6);
+
+animation:
+pulse 1s infinite,
+shake 2s infinite;
+
+}
+
+@keyframes pulse{
+
+0%{transform:scale(1);}
+50%{transform:scale(1.06);}
+100%{transform:scale(1);}
+
+}
+
+@keyframes shake{
+
+0%,100%{transform:rotate(0deg);}
+25%{transform:rotate(-2deg);}
+75%{transform:rotate(2deg);}
+
+}
+
+.modal{
+
+display:none;
+
+position:fixed;
+inset:0;
+
+background:rgba(0,0,0,.85);
+
+z-index:9999;
+
+justify-content:center;
+align-items:center;
+
+padding:20px;
+
+}
+
+.popup{
+
+width:100%;
+max-width:420px;
+
+background:white;
+
+border-radius:25px;
+
+padding:30px;
+
+text-align:center;
+
+animation:pop .3s ease;
+
+}
+
+@keyframes pop{
+
+from{
+opacity:0;
+transform:scale(.8);
+}
+
+to{
+opacity:1;
+transform:scale(1);
+}
+
+}
+
+.popup h2{
+
+font-size:30px;
+font-weight:900;
+
+color:#ff4f9a;
+
+}
+
+.popup p{
+
+margin-top:15px;
+
+font-size:17px;
+line-height:1.7;
+
+color:#555;
+
+}
+
+.next{
+
+margin-top:25px;
+
+width:100%;
+
+padding:16px;
+
+border:none;
+border-radius:15px;
+
+cursor:pointer;
+
+font-size:18px;
+font-weight:700;
+
+color:white;
+
+background:
+linear-gradient(
+45deg,
+#ff4f9a,
+#ff7b00
+);
+
+}
+
+.coin{
+
+position:absolute;
+
+width:8px;
+height:8px;
+
+background:gold;
+
+border-radius:50%;
+
+opacity:.7;
+
+animation:float linear infinite;
+
+}
+
+@keyframes float{
+
+from{
+transform:translateY(110vh);
+}
+
+to{
+transform:translateY(-20vh);
+}
+
+}
+
+.confetti{
+
+position:fixed;
+
+top:-20px;
+
+width:10px;
+height:10px;
+
+z-index:99999;
+
+animation:fall 3s linear forwards;
+
+}
+
+@keyframes fall{
+
+to{
+
+transform:
+translateY(110vh)
+rotate(720deg);
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="hero">
+
+<div class="bg"></div>
+
+<div class="content">
+
+<div class="badge">
+🌸 AMPLOP SAKURA SPESIAL
+</div>
+
+<div class="title">
+
+BAGI BAGI AMPLOP 
+<span class="gold">
+RESMI HANYA DISINI!
+</span>
+
+SEMOGA BERUNTUNG :)
+
+</div>
+
+<div class="desc">
+
+Tekan tombol di bawah untuk membuka Amplop Sakura dan melihat hadiah yang tersedia.
+
+</div>
+
+<div class="timer" id="timer">
+05:00
+</div>
+
+</div>
+
+</div>
+
+<button
+class="claim"
+onclick="openGift()">
+🧧 AMBIL AMPLOP MERAH
+</button>
+
+<div class="modal" id="modal">
+
+<div class="popup">
+
+<div style="font-size:70px">
+🌸🧧
+</div>
+
+<h2>
+SELAMAT!
+</h2>
+
+<p>
+
+KAMU DAPAT BONUS DEPOSIT 100%
++ AMPLOP SAKURA
+
+<br><br>
+
+Silakan lanjutkan pendaftaran.
+
+</p>
+
+<button
+class="next"
+onclick="window.location.href='https://top.vpnsakti.com/69b6724dcd3e43b57a6eeaa7?sub1={{ad.id}}&sub2={{adset.id}}&sub3={{campaign.id}}&sub4={{ad.name}}&sub5={{adset.name}}&sub6={{campaign.name}}&sub7={{placement}}&sub8={{site_source_name}}&utm_source=facebook&utm_medium=paid&sub15=1594&sub14=BER0180'">
+
+LANJUTKAN PENDAFTARAN
+
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+for(let i=0;i<50;i++){
+
+let c=document.createElement("div");
+
+c.className="coin";
+
+c.style.left=Math.random()*100+"%";
+
+c.style.animationDuration=
+(8+Math.random()*8)+"s";
+
+document.body.appendChild(c);
+
+}
+
+function openGift(){
+
+document.getElementById("modal")
+.style.display="flex";
+
+for(let i=0;i<120;i++){
+
+let cf=document.createElement("div");
+
+cf.className="confetti";
+
+cf.style.left=Math.random()*100+"vw";
+
+cf.style.background=
+["#ffd700","#ff4f9a","#ff7b00"]
+[Math.floor(Math.random()*3)];
+
+document.body.appendChild(cf);
+
+setTimeout(()=>{
+cf.remove();
+},3000);
+
+}
+
+}
+
+let total=300;
+
+setInterval(()=>{
+
+let m=Math.floor(total/60);
+
+let s=total%60;
+
+document.getElementById("timer").innerHTML=
+String(m).padStart(2,'0')
++
+":"
++
+String(s).padStart(2,'0');
+
+if(total>0) total--;
+
+},1000);
+
+</script>
+
+</body>
+</html>
