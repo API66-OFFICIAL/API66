@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>API66 Official</title>
+
+<meta name="description" content="API66 Official Website">
+<meta property="og:title" content="API66 Official">
+<meta property="og:description" content="API66 Official Website">
+<meta property="og:image" content="https://api66-official.github.io/API66/bnmtapi.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#000;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/* Animated Background */
+
+.background{
+    position:fixed;
+    width:100%;
+    height:100%;
+    z-index:-1;
+    overflow:hidden;
+}
+
+.background span{
+    position:absolute;
+    display:block;
+    width:20px;
+    height:20px;
+    background:#ffd700;
+    border-radius:50%;
+    animation:animate 15s linear infinite;
+    opacity:.5;
+}
+
+.background span:nth-child(1){left:10%;animation-duration:18s;}
+.background span:nth-child(2){left:20%;animation-duration:12s;}
+.background span:nth-child(3){left:30%;animation-duration:20s;}
+.background span:nth-child(4){left:40%;animation-duration:15s;}
+.background span:nth-child(5){left:50%;animation-duration:25s;}
+.background span:nth-child(6){left:60%;animation-duration:17s;}
+.background span:nth-child(7){left:70%;animation-duration:10s;}
+.background span:nth-child(8){left:80%;animation-duration:22s;}
+.background span:nth-child(9){left:90%;animation-duration:16s;}
+
+@keyframes animate{
+    0%{
+        transform:translateY(100vh) scale(0);
+    }
+    100%{
+        transform:translateY(-100px) scale(1.5);
+    }
+}
+
+.container{
+    max-width:520px;
+    margin:auto;
+    padding:30px 20px;
+    text-align:center;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.logo{
+    font-size:48px;
+    font-weight:700;
+    color:#ffd700;
+    margin-bottom:20px;
+    text-shadow:0 0 15px rgba(255,215,0,.6);
+}
+
+.banner{
+    width:100%;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 0 30px rgba(255,215,0,.25);
+    margin-bottom:25px;
+}
+
+.banner img{
+    width:100%;
+    display:block;
+}
+
+.btn{
+    display:block;
+    text-decoration:none;
+    color:#000;
+    background:#ffd700;
+    margin:10px 0;
+    padding:16px;
+    border-radius:12px;
+    font-weight:700;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 0 20px rgba(255,215,0,.5);
+}
+
+.footer{
+    margin-top:20px;
+    color:#999;
+    font-size:13px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="background">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+<div class="container">
+
+    <div class="logo">
+        API66
+    </div>
+
+    <div class="banner">
+        <img
+          src="https://api66-official.github.io/API66/bnmtapi.png"
+          alt="API66 Banner">
+    </div>
+
+    <a href="https://domainsaya.com/" class="btn">
+        HOME
+    </a>
+
+    <a href="https://domainsaya.com/" class="btn">
+        TENTANG KAMI
+    </a>
+
+    <a href="https://domainsaya.com/" class="btn">
+        PRODUK & LAYANAN
+    </a>
+
+    <a href="https://domainsaya.com/" class="btn">
+        HUBUNGI KAMI
+    </a>
+
+    <div class="footer">
+        © 2026 API66. All Rights Reserved.
+    </div>
+
+</div>
+
+</body>
+</html>
